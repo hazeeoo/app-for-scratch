@@ -33,6 +33,25 @@ let currentQuestion = 0;
 let score = 0;
 const bgMusic = document.getElementById('bg-music');
 
+// Предзагрузка всех картинок
+const imageCache = [];
+function preloadImages() {
+    const imagesToLoad = [
+        ...questions.map(q => q.image),
+        '../final.png',
+        '../hell.png'
+    ];
+    
+    imagesToLoad.forEach(src => {
+        const img = new Image();
+        img.src = src;
+        imageCache.push(img);
+    });
+}
+
+// Предзагружаем картинки при загрузке страницы
+window.addEventListener('load', preloadImages);
+
 // Переключение экранов
 function showScreen(screenId) {
     document.querySelectorAll('.screen').forEach(screen => {
