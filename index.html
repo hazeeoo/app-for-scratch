@@ -7,10 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <audio id="bg-music" loop>
+        <source src="../voices/maintheme.mp3" type="audio/mpeg">
+    </audio>
+
     <div id="app">
         <!-- Экран приветствия -->
         <div id="welcome-screen" class="screen active">
             <div class="content">
+                <div class="image-container">
+                    <img src="intro-tree.jpg" alt="Интро">
+                </div>
                 <h1>Путь Нюргуна Боотура</h1>
                 <p class="intro-text">Помоги герою спасти Туйаарыму Куо и пройти испытания чести.</p>
                 <button class="btn btn-start" onclick="startGame()">Начать путь</button>
@@ -20,6 +27,11 @@
         <!-- Экран вопроса -->
         <div id="question-screen" class="screen">
             <div class="content">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <p class="question-counter" id="question-counter"></p>
+                
                 <div class="image-container">
                     <img id="scene-image" src="" alt="Сцена">
                 </div>
@@ -39,6 +51,7 @@
                 </div>
                 <h2 id="result-title"></h2>
                 <p id="result-text"></p>
+                <div class="score-display" id="score-display"></div>
                 <button class="btn btn-restart" onclick="restartGame()"></button>
             </div>
         </div>
