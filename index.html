@@ -12,6 +12,9 @@
     </audio>
 
     <div id="app">
+        <!-- Кнопка управления музыкой -->
+        <button id="music-toggle" class="music-toggle" onclick="toggleMusic()">🔊</button>
+
         <!-- Экран приветствия -->
         <div id="welcome-screen" class="screen active">
             <div class="content">
@@ -21,25 +24,40 @@
                 <h1>Путь Нюргуна Боотура</h1>
                 <p class="intro-text">Помоги герою спасти Туйаарыму Куо и пройти испытания чести.</p>
                 <button class="btn btn-start" onclick="startGame()">Начать путь</button>
+                <button class="btn btn-glossary" onclick="showGlossary()">📖 Об Олонхо</button>
             </div>
         </div>
 
         <!-- Экран вопроса -->
         <div id="question-screen" class="screen">
             <div class="content">
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progress-fill"></div>
+                <div class="game-header">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <div class="game-info">
+                        <p class="question-counter" id="question-counter"></p>
+                        <div class="lives-display" id="lives-display"></div>
+                        <div class="timer" id="timer">⏱ 12с</div>
+                    </div>
                 </div>
-                <p class="question-counter" id="question-counter"></p>
                 
                 <div class="image-container">
                     <img id="scene-image" src="" alt="Сцена">
                 </div>
                 <h2 id="question-text"></h2>
+                
+                <div class="explanation" id="explanation">
+                    <p id="explanation-text"></p>
+                    <button class="btn btn-continue" id="continue-btn" onclick="continueGame()">Продолжить →</button>
+                </div>
+                
                 <div class="buttons-container">
                     <button class="btn btn-answer" onclick="selectAnswer(0)"></button>
                     <button class="btn btn-answer" onclick="selectAnswer(1)"></button>
                 </div>
+                
+                <button class="btn btn-hint" id="hint-btn" onclick="useHint()">💡 Подсказка</button>
             </div>
         </div>
 
@@ -52,7 +70,71 @@
                 <h2 id="result-title"></h2>
                 <p id="result-text"></p>
                 <div class="score-display" id="score-display"></div>
-                <button class="btn btn-restart" onclick="restartGame()"></button>
+                <div class="result-buttons">
+                    <button class="btn btn-restart" onclick="restartGame()"></button>
+                    <button class="btn btn-share" id="share-btn" onclick="shareResult()">📤 Поделиться</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Экран глоссария -->
+        <div id="glossary-screen" class="screen">
+            <div class="content glossary-content">
+                <h2>📖 Олонхо — якутский героический эпос</h2>
+                
+                <div class="glossary-section">
+                    <h3>Главные герои</h3>
+                    <div class="glossary-item">
+                        <strong>Нюргун Боотур</strong> — главный герой, могучий богатырь Среднего мира, защитник своего народа.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>Туйаарыма Куо</strong> — прекрасная девушка, невеста Нюргуна, похищенная злыми силами.
+                    </div>
+                </div>
+
+                <div class="glossary-section">
+                    <h3>Миры Олонхо</h3>
+                    <div class="glossary-item">
+                        <strong>Верхний мир</strong> — обитель добрых божеств айыы.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>Средний мир</strong> — мир людей, где живут якуты.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>Нижний мир</strong> — царство злых духов абаасы.
+                    </div>
+                </div>
+
+                <div class="glossary-section">
+                    <h3>Духи и существа</h3>
+                    <div class="glossary-item">
+                        <strong>Иччи</strong> — духи-хозяева природных стихий (леса, воды, огня).
+                    </div>
+                    <div class="glossary-item">
+                        <strong>Абаасы</strong> — злые духи и чудовища Нижнего мира.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>Айыы</strong> — добрые божества-покровители.
+                    </div>
+                </div>
+
+                <div class="glossary-section">
+                    <h3>Ценности героя</h3>
+                    <div class="glossary-item">
+                        ⚔️ <strong>Честь</strong> — главная добродетель богатыря
+                    </div>
+                    <div class="glossary-item">
+                        🛡️ <strong>Защита слабых</strong> — долг перед народом
+                    </div>
+                    <div class="glossary-item">
+                        🧠 <strong>Мудрость</strong> — сила разума важнее грубой силы
+                    </div>
+                    <div class="glossary-item">
+                        🤝 <strong>Верность</strong> — преданность слову и друзьям
+                    </div>
+                </div>
+
+                <button class="btn btn-start" onclick="closeGlossary()">Вернуться</button>
             </div>
         </div>
     </div>
