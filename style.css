@@ -388,43 +388,111 @@ h2 {
 
 @media (max-width: 480px) {
     .content {
-        padding: 25px 20px;
+        padding: 15px 15px;
     }
     
     h1 {
-        font-size: 1.6em;
+        font-size: 1.4em;
+        margin-bottom: 15px;
     }
     
     h2 {
-        font-size: 1.15em;
+        font-size: 1em;
+        margin: 10px 0;
     }
     
     .intro-text {
-        font-size: 1em;
+        font-size: 0.95em;
+        margin-bottom: 20px;
     }
     
     .image-container {
-        height: 200px;
+        height: 140px;
+        margin-bottom: 15px;
     }
     
     .btn {
-        padding: 14px 18px;
-        font-size: 0.95em;
+        padding: 12px 16px;
+        font-size: 0.9em;
+        min-height: 45px;
     }
     
     .music-toggle {
-        width: 45px;
-        height: 45px;
-        font-size: 1.3em;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2em;
+        top: 10px;
+        right: 10px;
+    }
+    
+    .game-header {
+        margin-bottom: 15px;
     }
     
     .game-info {
-        flex-direction: column;
-        gap: 8px;
+        flex-direction: row;
+        gap: 10px;
+        margin-top: 8px;
+        font-size: 0.9em;
+    }
+    
+    .question-counter {
+        font-size: 0.85em;
+        margin-bottom: 8px;
+    }
+    
+    .lives-display {
+        font-size: 1em;
+    }
+    
+    .timer {
+        font-size: 0.95em;
+        padding: 4px 10px;
+    }
+    
+    .buttons-container {
+        gap: 10px;
+        margin-top: 15px;
+    }
+    
+    .btn-hint {
+        margin-top: 10px;
+        padding: 10px 14px;
+        min-height: 40px;
+    }
+    
+    .explanation {
+        margin: 15px 0;
+        padding: 12px;
+    }
+    
+    .explanation.show {
+        max-height: 250px;
+    }
+    
+    #explanation-text {
+        font-size: 0.9em;
+        margin-bottom: 12px;
+    }
+    
+    .btn-continue {
+        padding: 10px 14px;
+        min-height: 40px;
     }
     
     .score-stats {
         grid-template-columns: 1fr;
+    }
+    
+    .glossary-section {
+        margin: 15px 0;
+        padding: 12px;
+    }
+    
+    .glossary-item {
+        margin: 8px 0;
+        padding: 8px;
+        font-size: 0.9em;
     }
 }
 
